@@ -36,13 +36,31 @@ var readFile = function (cwd) {
 				path: filename,
 				contents: data
 			});
-			console.log(file);
 			callback(null, file);
 		});
 	});
 };
 
 var scriptSrc = function (html, min) {
+	var stream = require('stream'),
+		cheerio = require('cheerio'),
+		readable = new stream.Readable({objectMode: true}),
+		$ = cheerio.load(html);
+
+	$('script[src]').each(function () {
+		var element = $(this),
+			src;
+		if (min) {
+			src = element.attr('min-src') || element.attr('data-min-src');
+		}
+		src = src || element.attr('target-src') || element.attr('data-target-src') || element.attr('src');
+		src && readable.push(src);
+	});
+	readable.push(null);
+	return readable;
+};
+
+var stylesheetSrc = function (html, min) {
 	var stream = require('stream'),
 		cheerio = require('cheerio'),
 		readable = new stream.Readable({objectMode: true}),
@@ -55,25 +73,6 @@ var scriptSrc = function (html, min) {
 			href = element.attr('min-href') || element.attr('data-min-href');
 		}
 		href = href || element.attr('target-href') || element.attr('data-target-href') || element.attr('href');
-		href && readable.push(href);
-	});
-	readable.push(null);
-	return readable;
-};
-
-var stylesheetSrc = function (html, min) {
-	var stream = require('stream'),
-		cheerio = require('cheerio'),
-		readable = new stream.Readable({objectMode: true}),
-		$ = cheerio.load(html);
-
-	$('script[src]').each(function () {
-		var element = $(this),
-			href;
-		if (min) {
-			href = element.attr('min-src') || element.attr('data-min-src');
-		}
-		href = href || element.attr('target-src') || element.attr('data-target-src') || element.attr('src');
 		href && readable.push(href);
 	});
 	readable.push(null);
