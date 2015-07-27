@@ -23,7 +23,8 @@ var readFile = function (cwd) {
 	var fs = require('fs'),
 		path = require('path'),
 		through2 = require('through2'),
-		File = require('vinyl');
+		File = require('vinyl'),
+		stripBom = require('strip-bom');
 
 	return through2.obj(function (chunk, end, callback) {
 		var filename = path.join(cwd || '', chunk);
@@ -34,7 +35,7 @@ var readFile = function (cwd) {
 			}
 			var file = new File({
 				path: filename,
-				contents: data
+				contents: stripBom(data)
 			});
 			callback(null, file);
 		});

@@ -15,6 +15,7 @@
   "homepage": "https://github.com/winsite/htmlbuild-functions#readme",
   "dependencies": {
     "cheerio": "^0.19.0",
+    "strip-bom": "^2.0.0",
     "through2": "^2.0.0",
     "vinyl": "^0.5.0"
   }
