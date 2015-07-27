@@ -83,10 +83,10 @@ var stylesheetSrc = function (html, min) {
 module.exports = {
 
 	/**
-	 * Builder pro vytvoøení streamu se seznamem všech skriptù
-	 * @param stream	Vıstupní stream
-	 * @param cwd	Pracovní adresáø
-	 * @param min	Pouít minifikované verze sriptù
+	 * Builder pro vytvoÅ™enÃ­ streamu se seznamem vÅ¡ech skriptÅ¯
+	 * @param stream	VÃ½stupnÃ­ stream
+	 * @param cwd	PracovnÃ­ adresÃ¡Å™
+	 * @param min	PouÅ¾Ã­t minifikovanÃ© verze sriptÅ¯
 	 * @returns {Function}
 	 */
 	streamScript: function (stream, cwd, min) {
@@ -102,10 +102,10 @@ module.exports = {
 	},
 
 	/**
-	 * Builder pro vytvoøení streamu se seznamem všech souborù se styly
-	 * @param stream	Vıstupní stream
-	 * @param cwd	Pracovní adresáø
-	 * @param min	Pouít minifikované verze souborù se styly
+	 * Builder pro vytvoÅ™enÃ­ streamu se seznamem vÅ¡ech souborÅ¯ se styly
+	 * @param stream	VÃ½stupnÃ­ stream
+	 * @param cwd	PracovnÃ­ adresÃ¡Å™
+	 * @param min	PouÅ¾Ã­t minifikovanÃ© verze souborÅ¯ se styly
 	 * @returns {Function}
 	 */
 	streamStylesheet: function (stream, cwd, min) {
@@ -121,7 +121,7 @@ module.exports = {
 	},
 
 	/**
-	 * Builder pro nahrazení sekce scriptù za souhrnnı script tag
+	 * Builder pro nahrazenÃ­ sekce scriptÅ¯ za souhrnnÃ½ script tag
 	 * @param src	Hodnota src atributu
 	 * @returns {Function}
 	 */
@@ -135,7 +135,7 @@ module.exports = {
 	},
 
 	/**
-	 * Builder pro nahrazení sekce stylù za souhrnnı script link
+	 * Builder pro nahrazenÃ­ sekce stylÅ¯ za souhrnnÃ½ script link
 	 * @param href	Hodnota href atributu
 	 * @returns {Function}
 	 */
