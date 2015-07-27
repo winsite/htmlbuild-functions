@@ -1,0 +1,22 @@
+{
+  "name": "htmlbuild-functions",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winsite/htmlbuild-functions.git"
+  },
+  "author": "Winsite a.s.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/winsite/htmlbuild-functions/issues"
+  },
+  "homepage": "https://github.com/winsite/htmlbuild-functions#readme",
+  "devDependencies": {
+    "cheerio": "^0.19.0",
+    "event-stream": "^3.3.1",
+    "gulp": "^3.9.0",
+    "sprintf": "^0.1.5"
+  }
+}
