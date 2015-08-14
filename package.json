@@ -1,7 +1,7 @@
 {
   "name": "htmlbuild-functions",
   "version": "0.0.1",
-  "description": "",
+  "description": "Reusable functions for gulp-htmlbuild",
   "main": "index.js",
   "repository": {
     "type": "git",
